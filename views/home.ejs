@@ -3,6 +3,14 @@
 <h1>Home</h1>
 <p><%=homeParagraph%></p>
 
-<% console.log(newPost) %> 
+<% newPost.forEach((element)=>{ %> 
+<% var shortParagraph=element.body.substring(0,100)+"..."; %>
+<h2><%=element.title %></h2>
+<p>
+  <%=shortParagraph %>
+  <a href="<%=postLinks%>">Read more</a>
+</p>
+
+<% }) %> 
 
 <%- include("partials/footer") -%>
